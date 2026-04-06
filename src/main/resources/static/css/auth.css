@@ -1,0 +1,82 @@
+:root {
+  --primary-neon: #00f2ff;
+  --secondary-neon: #7000ff;
+  --bg-dark: #0a0b10;
+  --error-red: #ff4d6d;
+  --success-neon: #39ff88;
+}
+
+body.auth-body {
+  background: radial-gradient(circle at top right, #1a1b25, var(--bg-dark));
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.auth-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, var(--primary-neon), var(--secondary-neon));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.form-control:focus {
+  border-color: var(--primary-neon);
+  box-shadow: 0 0 0 0.25rem rgba(0, 242, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+label {
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.form-text.error {
+  color: var(--error-red);
+  font-size: 0.85rem;
+}
+
+.success-text {
+  color: var(--success-neon);
+}
+
+.btn-neon {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, var(--secondary-neon), var(--primary-neon));
+  color: #fff;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn-neon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(112, 0, 255, 0.45);
+}
+
+.toggle-password {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.toggle-password:hover {
+  border-color: var(--primary-neon);
+  color: var(--primary-neon);
+}
