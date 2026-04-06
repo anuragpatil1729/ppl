@@ -14,10 +14,16 @@ public class EmailService {
     }
 
     public void sendOtpEmail(String toEmail, String otp) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(toEmail);
-        message.setSubject("Your Nexus Verification Code");
-        message.setText("Your OTP is: " + otp + ". Valid for 10 minutes.");
-        mailSender.send(message);
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(toEmail);
+            message.setSubject("Your Nexus Verification Code");
+            message.setText("Your OTP is: " + otp + ". Valid for 10 minutes.");
+            mailSender.send(message);
+        } catch (Exception e) {
+            System.err.println("Failed to send OTP email: " + e.getMessage());
+            throw new RuntimeException(
+                    "Failed to send verification email. Please check your email address.");
+        }
     }
 }
