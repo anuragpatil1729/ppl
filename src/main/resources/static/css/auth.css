@@ -80,3 +80,23 @@ label {
   border-color: var(--primary-neon);
   color: var(--primary-neon);
 }
+
+.btn-outline-neon {
+  border: 1px solid var(--primary-neon);
+  border-radius: 12px;
+  color: var(--primary-neon);
+  background: transparent;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn-outline-neon:hover {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(45deg, var(--secondary-neon), var(--primary-neon));
+}
+
+#otp {
+  letter-spacing: 0.4rem;
+  font-size: 1.1rem;
+}

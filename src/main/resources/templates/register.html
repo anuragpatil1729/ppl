@@ -19,7 +19,7 @@
         <form th:action="@{/register}" th:object="${registerRequest}" method="post" data-auth-form>
           <div class="mb-3">
             <label for="fullName" class="form-label">Full Name</label>
-            <input id="fullName" type="text" class="form-control" th:field="*{fullName}" minlength="3" required>
+            <input id="fullName" type="text" class="form-control" th:field="*{fullName}" pattern="[a-zA-Z ]+" minlength="3" required>
             <div class="form-text error" th:errors="*{fullName}"></div>
             <div class="form-text error" data-error-for="fullName"></div>
           </div>
