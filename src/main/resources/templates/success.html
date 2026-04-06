@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Access Granted | Nexus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-neon: #00f2ff;
+      --success-glow: #00ff88;
+      --bg-dark: #0a0b10;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #1a1b25, var(--bg-dark));
+      color: white;
+      font-family: 'Inter', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .success-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      border-radius: 30px;
+      padding: 50px;
+      text-align: center;
+      box-shadow: 0 0 50px rgba(0, 255, 136, 0.1);
+      max-width: 500px;
+      width: 90%;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .icon-container {
+      width: 100px;
+      height: 100px;
+      background: rgba(0, 255, 136, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      border: 2px solid var(--success-glow);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(0, 255, 136, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+    }
+
+    .checkmark {
+      font-size: 50px;
+      color: var(--success-glow);
+      text-shadow: 0 0 10px var(--success-glow);
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      color: var(--success-glow);
+      margin-bottom: 15px;
+    }
+
+    .status-badge {
+      background: rgba(0, 255, 136, 0.1);
+      color: var(--success-glow);
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .btn-home {
+      background: transparent;
+      border: 1px solid var(--primary-neon);
+      color: var(--primary-neon);
+      border-radius: 12px;
+      padding: 12px 30px;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;
+    }
+
+    .btn-home:hover {
+      background: var(--primary-neon);
+      color: var(--bg-dark);
+      box-shadow: 0 0 20px var(--primary-neon);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="success-card">
+    <div class="icon-container">
+      <div class="checkmark">&#10004;</div>
+    </div>
+    
+    <div class="mb-3">
+        <span class="status-badge">Transaction Verified</span>
+    </div>
+
+    <h1>ACCESS GRANTED</h1>
+    
+    <p>Your enrollment in the system is complete. Your learning modules are now being initialized in your dashboard.</p>
+    
+    <a href="/" class="btn-home">Return to Terminal</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
