@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 public class RegisterRequest {
 
     @NotBlank(message = "Full name is required")
-    @Size(min = 3, message = "Full name must be at least 3 characters")
+    @Pattern(regexp = "^[a-zA-Z ]{3,}$", message = "Name must contain only letters and spaces, minimum 3 characters")
     private String fullName;
 
     @NotBlank(message = "Email is required")

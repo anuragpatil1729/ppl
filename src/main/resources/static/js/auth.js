@@ -21,7 +21,9 @@
     let message = '';
 
     if (field.name === 'fullName') {
-      if (value.length < 3) message = 'Full name must be at least 3 characters';
+      if (!/^[a-zA-Z ]{3,}$/.test(value)) {
+        message = 'Name must contain only letters and spaces, min 3 characters';
+      }
     }
 
     if (field.name === 'email') {

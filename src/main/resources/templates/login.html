@@ -16,7 +16,8 @@
         <h2 class="auth-heading text-center mb-2">Welcome Back</h2>
         <p class="text-center text-white-50 mb-4">Access your dashboard securely</p>
 
-        <p class="success-text text-center" th:if="${param.registered}">Registration successful. Please sign in.</p>
+        <p class="success-text text-center" th:if="${param.registered}">Registration successful. Please verify your email with OTP.</p>
+        <p class="success-text text-center" th:if="${param.verified}">Email verified successfully. Please sign in.</p>
         <p class="success-text text-center" th:if="${param.logout}">You have been logged out.</p>
         <p class="form-text error text-center" th:if="${#fields.hasGlobalErrors()}" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
 
