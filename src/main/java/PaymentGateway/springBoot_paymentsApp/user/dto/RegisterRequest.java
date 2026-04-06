@@ -3,7 +3,6 @@ package PaymentGateway.springBoot_paymentsApp.user.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 
 public class RegisterRequest {
 
@@ -20,10 +19,9 @@ public class RegisterRequest {
     private String mobile;
 
     @NotBlank(message = "Password is required")
-    @Size(min = 8, message = "Password must be at least 8 characters")
-    @Pattern(regexp = ".*[A-Z].*", message = "Password must include at least 1 uppercase letter")
-    @Pattern(regexp = ".*\\d.*", message = "Password must include at least 1 number")
-    @Pattern(regexp = ".*[^A-Za-z0-9].*", message = "Password must include at least 1 special character")
+    @Pattern(
+            regexp = "^(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z0-9]).{8,}$",
+            message = "Password must be 8+ chars with 1 uppercase, 1 number, 1 special character")
     private String password;
 
     @NotBlank(message = "Please confirm your password")

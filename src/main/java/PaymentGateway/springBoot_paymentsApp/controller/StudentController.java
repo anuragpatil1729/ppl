@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import PaymentGateway.springBoot_paymentsApp.dto.StudentOrder;
 import PaymentGateway.springBoot_paymentsApp.service.StudentService;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @CrossOrigin(origins = "*") // Useful if you run into CORS issues during local dev
@@ -17,12 +18,6 @@ public class StudentController {
     @Autowired
     private StudentService service;
     
-    // Serve the futuristic index page
-    @GetMapping("/")
-    public String init() {
-        return "index";
-    }
-    
     /**
      * Creates a Razorpay Order.
      * Note: Ensure your service multiplies 'amount' by 100 
@@ -30,7 +25,12 @@ public class StudentController {
      */
     @PostMapping(value = "/create-order", consumes = "application/json", produces = "application/json")
     @ResponseBody
-    public ResponseEntity<StudentOrder> createOrder(@RequestBody StudentOrder studentOrder) throws Exception {
+    public ResponseEntity<StudentOrder> createOrder(@RequestBody StudentOrder studentOrder, HttpSession session)
+            throws Exception {
+        if (session.getAttribute("currentUserId") == null) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+
         // Business logic for order creation is delegated to the service
         StudentOrder createdOrder = service.createOrder(studentOrder);
         return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
